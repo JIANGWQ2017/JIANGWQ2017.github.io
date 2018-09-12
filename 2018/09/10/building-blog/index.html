@@ -16,7 +16,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Hexo + Github Page 搭建个人博客"/>
+      <meta property="og:title" content="Hexo + Github Page 搭建个人博客及自定义"/>
   
   <!--Open Graph Description-->
   
@@ -33,7 +33,7 @@
 
   <!-- Title -->
   
-  <title>Hexo + Github Page 搭建个人博客 - 不会游泳的金鱼</title>
+  <title>Hexo + Github Page 搭建个人博客及自定义 - 不会游泳的金鱼</title>
 
 
   <link rel="shortcut icon" href="https://raw.githubusercontent.com/JIANGWQ2017/PostImg/master/favicon.ico">
@@ -115,7 +115,7 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            Hexo + Github Page 搭建个人博客
+            Hexo + Github Page 搭建个人博客及自定义
             
           </h1>
           <p class="posted-on">
@@ -134,12 +134,12 @@
         <!-- Post Main Content -->
         <div class="entry-content has_line_number">
           
-        <div id="aplayer-qVnrlgfj" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-BINcdrQx" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-qVnrlgfj"),
+            element: document.getElementById("aplayer-BINcdrQx"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -185,9 +185,22 @@
 <h1 id="Encrypt"><a href="#Encrypt" class="headerlink" title="Encrypt"></a>Encrypt</h1><p>当然啦，并不是每篇文章都想让别人看到，这个时候就需要对博文进行加密.有一个很方便的插件是hexo-blog-encrypt.简单的使用方法如下，详情请见reference 3。</p>
 <p><img src="https://raw.githubusercontent.com/JIANGWQ2017/MarkdownImg/master/encrypt-blog.png" alt="blog-encrypt"></p>
 <p>但是在笔者测试过程中，出现某些theme并不能很好的支持插件，出现从首页跳转到post，js不加载，但是刷新一遍js便可以加载的情况。由于笔者不是做前端的，折腾两天没有找出问题出在哪里，于是曲线救国…换一个theme！</p>
+<h1 id="Add-backgroud-music-2018-9-11-update"><a href="#Add-backgroud-music-2018-9-11-update" class="headerlink" title="Add backgroud music / 2018.9.11 update"></a>Add backgroud music / 2018.9.11 update</h1><p>网上提到hexo框架背景音乐的添加，实现方法大多为两种，一种是获取主流音乐平台的外链，然后插入HTML，ejs等类型文件中；另一种是利用hexo-tag-aplayer 插件在markdown文件中添加相应代码,这两种方法各有优缺点： </p>
+<p>第一种：</p>
+<p>PROs： 直观，方便，插在页面上任何的地方都可以。</p>
+<p>CONs: 需要一点前端，特别是html的知识，并且不方便在单篇文章添加BGM，只适合于为整个网站添加； 对于海外版权受限区域，主流平台通常不支持生成外链。</p>
+<p>第二种：</p>
+<p>PROs: 因为是在markdown文件中添加的，所以可以为单个文章添加BGM，也方便为不同post添加不同BGM。</p>
+<p>CONs: 需要安装额外插件， 可能造成一些程序上的冲突，或是不兼容问题； 添加起来没有第一种方便。</p>
+<p>鉴于笔者位于海外， 网易云对海外用户特别不友好，之前成为会员可以解锁大部分歌曲的版权，现在是有钱都不行了，绝大部分的歌曲只能在线听。客户端是不支持生成外链的，但网页版又有版权限制， 故在此劝海外的同学们放弃第一种插入bgm的方式吧。在此详细讲解第二种方式，第一种实现方式参考reference 4。</p>
+<p>该插件的使用方法在作者的<a href="https://github.com/MoePlayer/hexo-tag-aplayer" target="_blank" rel="noopener">github</a>上有详细的说明，这里只说明一下要点。</p>
+<p><img src="https://raw.githubusercontent.com/JIANGWQ2017/MarkdownImg/master/plugin_usage.png" alt="plugin_usage"></p>
+<p>usage 下的命令是直接添加到markdown文件中的，成为文章的一部分，所以位置推荐放在文章开头， 遇到审美不同的看客，她/他也方便关掉BGM。  title,author 等一切参数最好都用” “包括，就是例子中给出的那样。作者没有给出除了歌词之外的几个optional参数怎么使用，当笔者在参考他人写的博客的时候就被误导了，他/她写的是  “autoplay=false”， 在hexo g 命令下报错，错误信息是not found (autoplay=false) 后来看了插件作者的源码之后发现作者是用正则表达式去提取parameter, 应该直接写”autoplay”代表自动播放，不写代表不自动播放，其他optional参数类似。 </p>
+<p>现在还有一个最重要的问题，怎么取的音频的url，方法当然是上传到共享空间，然后获得url，但是目前笔者没有找到一个合适的音频文件共享网站，但是在搜索过程中发现一个神奇的网站，<a href="http://music.liuzhijin.cn/" target="_blank" rel="noopener">音乐直链搜索</a>，很方便的提取到音乐链接，作者，名称。剩下的工作就是添加对应代码到markdown文件中的合适位置就好了。</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>[1] <a href="https://segmentfault.com/a/1190000008738089" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008738089</a></p>
 <p>[2] <a href="https://jakting.com/archives/hexo-setup-guide.html" target="_blank" rel="noopener">https://jakting.com/archives/hexo-setup-guide.html</a></p>
 <p>[3] <a href="https://github.com/MikeCoder/hexo-blog-encrypt" target="_blank" rel="noopener">https://github.com/MikeCoder/hexo-blog-encrypt</a></p>
+<p>[4] <a href="https://www.jianshu.com/p/9a3fc2bdfac7" target="_blank" rel="noopener">https://www.jianshu.com/p/9a3fc2bdfac7</a></p>
 
         </div>
       </article>
