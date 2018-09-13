@@ -134,12 +134,12 @@
         <!-- Post Main Content -->
         <div class="entry-content has_line_number">
           
-        <div id="aplayer-bDLjbbIp" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-qfxmCdyB" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-bDLjbbIp"),
+            element: document.getElementById("aplayer-qfxmCdyB"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -327,6 +327,12 @@
 <blockquote>
 <p>test(no indent)<br>&nbsp;test(nbsp)<br>&ensp;test(ensp)<br>&emsp;test(emsp) </p>
 </blockquote>
+<hr>
+<h3 id="anchor"><a href="#anchor" class="headerlink" title="anchor"></a><strong><em>anchor</em></strong></h3><p>when using markdown header, the compiler implicatly creates an id named headername but ignore punctuation and using “-“ to replace empty space. e.g: </p>
+<blockquote>
+<p># header, name<br>id = header-name </p>
+</blockquote>
+<p>so if we want to refer to a header, just place [self-defined name](#id) at where you want to connect.</p>
 <hr>
 <h3 id="extras"><a href="#extras" class="headerlink" title="extras"></a><strong><em>extras</em></strong></h3><p>&#160;&#160;&#160;&#160;<a href="#Table-Of-Contents">Toc</a> </p>
 <p>1: task lists:</p>
