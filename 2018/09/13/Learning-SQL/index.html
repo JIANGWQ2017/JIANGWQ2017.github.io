@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="WEIQI JIANG">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="Learning-SQL"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="不会游泳的金鱼"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>Learning-SQL - 不会游泳的金鱼</title>
+
+
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/JIANGWQ2017/PostImg/master/favicon.ico">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://raw.githubusercontent.com/JIANGWQ2017/PostImg/master/icon.png" alt="不会游泳的金鱼" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  archive
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            Learning-SQL
+            
+          </h1>
+          <p class="posted-on">
+          2018-09-13
+          </p>
+          <div class="tags-links">
+            
+              
+                <a href="/tags/Tech/" rel="tag">
+                  Tech
+                </a>
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content has_line_number">
+          
+        <div id="aplayer-JXtLbUkT" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-JXtLbUkT"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "3月9日",
+              author: "竹内美宥",
+              url: "http://dl.stream.qqmusic.qq.com/M5000022nyen3qUf5N.mp3?vkey=894C969231BC75AF8365CF2FB17E40281B2F7A8694ECEC855657CACDACC0AB88D63B9FDD91305E3BDA3F043FC372A6158C126A33A00AF8A9&guid=5150825362&fromtag=1",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+<h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a><strong>Preface</strong></h1><p align="justify">This post serves as the records for the process of learning SQL syntax, keep updating! </p>
+
+<hr>
+<h1 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</h1><ul>
+<li><p><a href="#Basic-knowledge">Basic knowledge</a></p>
+</li>
+<li><p>SQL syntax</p>
+<ol>
+<li><a href="#select">select</a></li>
+<li><a href="#where-conditions">where conditions</a></li>
+<li><a href="#like">like</a>s</li>
+<li><a href="#group-by">group by</a></li>
+<li><a href="#subquery">subquery</a></li>
+<li><a href="#join">join</a></li>
+<li><a href="#union">union</a></li>
+<li><a href="#extract">extract</a></li>
+</ol>
+</li>
+<li><p><a href="#element-operations">element operations</a></p>
+</li>
+<li><a href="#table-operations">table operations</a></li>
+</ul>
+<h1 id="Basic-knowledge"><a href="#Basic-knowledge" class="headerlink" title="Basic knowledge"></a>Basic knowledge</h1><ul>
+<li>SQL is case insensitive.</li>
+<li>“=” represent equal not “==”</li>
+<li>the order of rows in the database is always unknown and unpredicted, when using limit clause, always use order by clause to control the output</li>
+</ul>
+<h1 id="SQL-syntax"><a href="#SQL-syntax" class="headerlink" title="SQL syntax"></a><strong>SQL syntax</strong></h1><h2 id="select"><a href="#select" class="headerlink" title="select"></a><strong>select</strong></h2><blockquote>
+<p>select (distinct) col1 as xxx, col2  as xxx… from table<br>where conditions<br>order by col3  (ASC/DESC)<br>(limit n offset m);</p>
+</blockquote>
+<h2 id="where-conditions"><a href="#where-conditions" class="headerlink" title="where conditions"></a><strong>where conditions</strong></h2><blockquote>
+<p>not equal：  &lt;&gt; or ！=<br>equal : =<br>logical and: AND<br>logical or:  OR<br>in clause: col in (value list)<br>not in clause:  col not in (value list)<br>between: value between low_val and high_value</p>
+</blockquote>
+<h2 id="like"><a href="#like" class="headerlink" title="like"></a><strong>like</strong></h2><blockquote>
+<p>select first_name, last_name from customer<br>where first_name like ‘jen%’ ;<br>“%”: matching any sequence of characters<br>“_”: matching any single characters</p>
+</blockquote>
+<h2 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a><strong>group by</strong></h2><p>the group by clause is used in conjunction with an aggregate function</p>
+<blockquote>
+<p>select customer_id ,sum(amount) from payment<br>group by customer_id<br>having conditons</p>
+</blockquote>
+<p align="justify">the column name which occur in group by clause must be either in group by expression or in aggregate function.<br>having clause just have the same function as where clause in normal select expression. but the operand of this clause is the group by object, filter those groups that do not meet the conditions.</p>
+
+<h2 id="subquery"><a href="#subquery" class="headerlink" title="subquery"></a><strong>subquery</strong></h2><p align="justify">subquery are mostly used when some intermediate results are needed. when multisubquery occur, using parentheis to indicate the hierachey.</p> e.g.:<br><br>&gt; select studentid,score from student<br>where score &gt; (select mean(score) from student);<br><br>## <strong>join</strong><br><br><p align="justify">tips: Before writing SQL sentence, think clearly what columns or information you actually want from those tables. list them after select keyword</p>
+
+<ul>
+<li><p>inner join (or join):  </p>
+<blockquote>
+<p>select a.col1,a.col2,b.col3,b.col4<br>from table1 as a inner join table2 as b<br>on a.primarykey = b.foreign key<br>(only keep the elements that exist in both tables )</p>
+</blockquote>
+</li>
+<li><p>left join :</p>
+<blockquote>
+<p>select a.col1,a.col2,b.col3,b.col4<br>from table1 as a left join table2 as b<br>on a.primarykey = b.foreign key<br>(keep all element in table a, if no matched foreign key in table b, fill with NaN value  )</p>
+</blockquote>
+</li>
+<li><p>right join :</p>
+<blockquote>
+<p>select a.col1,a.col2,b.col3,b.col4<br>from table1 as a right join table2 as b<br>on a.primarykey = b.foreign key<br>(keep all element in table b, if no matched primary in table a, fill with NaN )</p>
+</blockquote>
+</li>
+<li><p>outer join :</p>
+<blockquote>
+<p>select a.col1,a.col2,b.col3,b.col4<br>from table1 as a outer join table2 as b<br>on a.primarykey = b.foreign key<br>(keep all elements , fill missing value with NaN )</p>
+</blockquote>
+</li>
+</ul>
+<p>if we want to select the intersection of table a and table b:</p>
+<blockquote>
+<p>just use inner join clause </p>
+</blockquote>
+<p>if we want to select elements that only exist in table a not in table b:  </p>
+<blockquote>
+<p>select cols from tablea<br>left join tableb<br>on a.pk = b.fk<br>where b.id = null</p>
+</blockquote>
+<p>if want to know the element which is either only exists in tablea or in tableb :  </p>
+<blockquote>
+<p>select cols from table1 as a<br>outer join table 2 as b<br>on a.pk = b.fk<br>where a.id = null or b.id = null  </p>
+</blockquote>
+<h2 id="union"><a href="#union" class="headerlink" title="union"></a><strong>union</strong></h2><p align="justify">the queries involued in union clause must have the same number of columns, and compatiblle data type. union clause will remove duplicated rows implicitly, if not want to , using union all clause instead. </p> 
+
+<blockquote>
+<p>(select cols from table1 as a)<br>union<br>(select cols from table2 as b)</p>
+</blockquote>
+<h2 id="extract"><a href="#extract" class="headerlink" title="extract"></a><strong>extract</strong></h2><blockquote>
+<p>select extract(day/month/year from payment_date ) from payment</p>
+</blockquote>
+<h1 id="element-operations"><a href="#element-operations" class="headerlink" title="element operations"></a><strong>element operations</strong></h1><ul>
+<li>insert  <blockquote>
+<p>type1:<br>insert into tablename<br>(col1,col2,col3…)<br>values<br>(val11,val12,val13…),(val21,val22,val23…)…  </p>
+<hr>
+<p>type 2:<br>insert into table<br>[(col1 ,col2, col3 …)]<br>select c1,c2.. from another table<br>where conditions  </p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>update  <blockquote>
+<p>update tablename<br>set<br>col1 = value1<br>col2 = value2<br>…<br>where conditions</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="table-operations"><a href="#table-operations" class="headerlink" title=" table operations"></a><strong> table operations</strong></h1><ul>
+<li><p>create table </p>
+<blockquote>
+<p>create table tablename<br>(<br>col1 datatpye constraints,<br>col2 datatype constraints ,<br>col3 datatype constraints<br>table constraints<br>[inherit exist_table]<br>) </p>
+<p>most used datatype:  </p>
+<ol>
+<li>char(size): fixed length string, if input exceeds the size, cut it size length, otherwise use empty  space to fill the length gap. store up tp255 characters  </li>
+<li>varchar(size): variable length string. up to 255 characters. if input exceed the max length automaticly converted to text type.  </li>
+<li>text  up to 65535 characters  </li>
+<li>enum(values sperate by comma) indicate that the input value must in the mentioned value list, if not insert blank space  </li>
+<li>int(size) speific the maximum number of digits</li>
+<li>float(size,d) maximun digits can be specificed in size parameters, and maximum number of digits to the right of decimal points is specificed by d parameter.  </li>
+<li>double(size,d)  </li>
+<li>decimal(size,d)  a double stored as a string.</li>
+<li>date() date format:YYYY-MM-DD </li>
+<li>time() formate HH:MI:SS </li>
+<li>DATETIME() FORMAT: YYYY-MM-DD HH:MI:SS</li>
+<li>TIMESTAMP() format yyyymmddhhmmss  </li>
+</ol>
+<hr>
+<p align="justify">Even if DATETIME and TIMESTAMP return the same format, they work very differently. In an INSERT or UPDATE query, the TIMESTAMP automatically set itself to the current date and time. TIMESTAMP also accepts various formats, like YYYYMMDDHHMISS, YYMMDDHHMISS, YYYYMMDD, or YYMMDD.</p>
+
+<p>For more infos <a href="https://www.w3schools.com/sql/sql_datatypes.asp" target="_blank" rel="noopener">MYSQL datatypes</a></p>
+<p>Most used constraints:  </p>
+<ol>
+<li>check  </li>
+<li>not null   </li>
+<li>unique   </li>
+<li>reference (nust exist in a column in other table)  </li>
+<li>primary key  </li>
+<li>forign key   </li>
+<li>default   </li>
+<li>AUTO_INCREMENT  or AUTO_INCREMENT=100 (default=1)</li>
+</ol>
+</blockquote>
+</li>
+<li><p>delete table </p>
+<blockquote>
+<p>delete from tablename<br>where conditions<br>[return */ col1, col2, col3…]</p>
+</blockquote>
+</li>
+<li><p>alter table </p>
+<blockquote>
+<p>alter table tablename add column newcol dtype<br>alter table tablename drop column colname<br>alter table tablename rename col_oldname to new_colname<br>alter table tablename rename to new_tablename<br>alter table tablename alter colname type newtype.</p>
+</blockquote>
+</li>
+</ul>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+        <div class="nav-next">
+          <a href="/2018/09/12/learn-markdown/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">About</h1>
+        <div class="custom-widget-content">
+          
+          <ul><li><a href="https://github.com/GallenHu/hexo-theme-Daily/wiki">About</a></li></ul>
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/JIANGWQ2017" class="icon icon-github" target="_blank">github</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.submitSearch('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>不会游泳的金鱼 &copy; 2018</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>
