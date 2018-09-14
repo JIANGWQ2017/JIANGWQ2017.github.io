@@ -134,12 +134,12 @@
         <!-- Post Main Content -->
         <div class="entry-content has_line_number">
           
-        <div id="aplayer-NHAaKQlY" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-MIUyqflc" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-NHAaKQlY"),
+            element: document.getElementById("aplayer-MIUyqflc"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -154,50 +154,85 @@
           window.aplayers || (window.aplayers = []);
           window.aplayers.push(ap);
         </script>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>是否有时候会突然有种想写东西的冲动，不是为了专门写给别人看，不是为了炫耀，不是为了装逼，简简单单作为自己情绪或者是学习过程的记录；一个静态的个人博客提供了近乎完美的解决方案。本文采用的是Hexo框架+github page 搭建博客，为什么采用hexo 和 github page呢？ 搭建博客的框架有很多，比如jekyll, 但是目前jekyll没有较方便实现博文加密的插件，虽然静态网站的加密注定不会做的很好，但是即使最基本的加密也可以拦住大部分人，这就够了。至于选择github page，穷是原罪，零成本的服务器谁不想要呢？至于不能定制URL，纯属个人意愿，笔者不在乎啦~</p>
-<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><p>安装 Node.JS</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><font color="LightSkyBlue"><strong>前言</strong></font></h1><p align="justify"> 是否有时候会突然有种想写东西的冲动，不是为了专门写给别人看，不是为了炫耀，不是为了装逼，简简单单作为自己情绪或者是学习过程的记录；一个静态的个人博客提供了近乎完美的解决方案。本文采用的是Hexo框架+github page 搭建博客，为什么采用hexo 和 github page呢？ 搭建博客的框架有很多，比如jekyll, 但是目前jekyll没有较方便实现博文加密的插件，虽然静态网站的加密注定不会做的很好，但是即使最基本的加密也可以拦住大部分人，这就够了。至于选择github page，穷是原罪，零成本的服务器谁不想要呢？至于不能定制URL，纯属个人意愿，笔者不在乎啦~</p>
+
+<hr>
+<h1 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h1><ul>
+<li><a href="Hexo">Hexo</a><ol>
+<li><a href="install-hexo">install Hexo</a></li>
+<li><a href="init-blog">init blog</a></li>
+<li><a href="install-theme">install theme</a></li>
+</ol>
+</li>
+<li><a href="Github-page">Github page</a></li>
+<li><a href="Encrypt">Encrypt</a></li>
+<li><a href="Background-music">Background music</a> </li>
+<li><a href="Reference">Reference</a></li>
+</ul>
+<hr>
+<h1 id="Env"><a href="#Env" class="headerlink" title="Env"></a><font color="LightSkyBlue" size="7"><strong>Env</strong></font></h1><p>安装 Node.JS</p>
 <p>安装 Git</p>
-<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h3 id="install-hexo"><a href="#install-hexo" class="headerlink" title="install hexo"></a>install hexo</h3><p>请务必创建一个空的文件夹，修改名称，这个文件夹用来保存博客的文件。在这个空文件夹下右键git bash here，在命令行中输入：</p>
+<hr>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a><font color="LightSkyBlue" size="7"><strong>Hexo</strong></font></h1><h3 id="install-hexo"><a href="#install-hexo" class="headerlink" title="install hexo"></a><strong>install hexo</strong></h3><p>请务必创建一个空的文件夹，修改名称，这个文件夹用来保存博客的文件。在这个空文件夹下右键git bash here，在命令行中输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <p>等待hexo安装完毕</p>
-<h3 id="init-blog"><a href="#init-blog" class="headerlink" title="init blog"></a>init blog</h3><p>hexo 安装完毕之后接着输入</p>
+<hr>
+<h3 id="init-blog"><a href="#init-blog" class="headerlink" title="init blog"></a><strong>init blog</strong></h3><p>hexo 安装完毕之后接着输入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 <p>这条命令会在文件夹下生成一个初始的blog，默认主题是landscape</p>
 <p>接着输入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
 <p>这条命令会按照package.json文件中的指示安装相关依赖。如果不出问题，完成上步之后就可以依次输入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g   # generate</span><br><span class="line">hexo s  # serve</span><br></pre></td></tr></table></figure>
-<p>然后在浏览器中localhost：4000 端口看到初始化的blog。 如果hexo s报错，大概率是因为4000端口被其他程序占用，最简单的解决方式是 使用 hexo s -p xxxx（任意端口号）例如 hexo s - p 5000 使用5000端口而不是默认的4000端口。</p>
-<h3 id="install-theme"><a href="#install-theme" class="headerlink" title="install theme"></a>install theme</h3><p>访问<a href="https://hexo.io/themes/index.html" target="_blank" rel="noopener">hexo|theme</a>选择一款喜欢的主题，进入作者的GitHub，作者会给出使用方法，例如本文使用的<a href="https://hinpc.github.io/Daily/" target="_blank" rel="noopener">Daily主题</a>,作者在github上给出了详细的<a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank" rel="noopener">安装步骤</a>。</p>
+<p align="justify"> 然后在浏览器中localhost：4000 端口看到初始化的blog。 如果hexo s报错，大概率是因为4000端口被其他程序占用，最简单的解决方式是 使用 hexo s -p xxxx（任意端口号）例如 hexo s - p 5000 使用5000端口而不是默认的4000端口。</p>
+
+<hr>
+<h3 id="install-theme"><a href="#install-theme" class="headerlink" title="install theme"></a><strong>install theme</strong></h3><p align="justify"> 访问<a href="https://hexo.io/themes/index.html" target="_blank" rel="noopener">hexo|theme</a>选择一款喜欢的主题，进入作者的GitHub，作者会给出使用方法，例如本文使用的<a href="https://hinpc.github.io/Daily/" target="_blank" rel="noopener">Daily主题</a>,作者在github上给出了详细的<a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank" rel="noopener">安装步骤</a>。</p>
+
 <p><img src="https://raw.githubusercontent.com/JIANGWQ2017/MarkdownImg/master/usage.png" alt="usage"></p>
-<p>一般按照步骤来就不会有错，但是这里有个值得注意的点，在第一步的最后，themes/Daily 意思是在根文件夹中的theme文件夹下创建一个Daily文件夹，这个是没有问题的，但是有的theme作者给出的命令是直接在根文件夹下创建新文件夹，这样的话后来的步骤会报错，找不到名为xxx的theme，只需要将新文件夹移至theme文件夹下就好。</p>
-<p>模板样式的修改一般theme作者也会在github上较为完整的讲解，例如本文采用的<a href="https://github.com/GallenHu/hexo-theme-Daily/wiki" target="_blank" rel="noopener">theme</a>,完成模板的加载之后，后续主要使用的文件夹就是source下的”_posts”。</p>
-<p>使用命令创建新post，该命令会在_posts文件下生成一个markdown格式文件，并初始化开头，当然也完全可以自己创建。</p>
+<p align="justify"> 一般按照步骤来就不会有错，但是这里有个值得注意的点，在第一步的最后，themes/Daily 意思是在根文件夹中的theme文件夹下创建一个Daily文件夹，这个是没有问题的，但是有的theme作者给出的命令是直接在根文件夹下创建新文件夹，这样的话后来的步骤会报错，找不到名为xxx的theme，只需要将新文件夹移至theme文件夹下就好。</p>
+
+<p align="justify"> 模板样式的修改一般theme作者也会在github上较为完整的讲解，例如本文采用的<a href="https://github.com/GallenHu/hexo-theme-Daily/wiki" target="_blank" rel="noopener">theme</a>,完成模板的加载之后，后续主要使用的文件夹就是source下的”_posts”。</p>
+
+<p align="justify"> 使用命令创建新post，该命令会在_posts文件下生成一个markdown格式文件，并初始化开头，当然也完全可以自己创建。</p>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm new post postname</span><br></pre></td></tr></table></figure>
-<h1 id="github-page"><a href="#github-page" class="headerlink" title="github page"></a>github page</h1><h3 id="create-a-new-repository"><a href="#create-a-new-repository" class="headerlink" title="create a new repository"></a>create a new repository</h3><p>创建一个新的repo，名为<em>username</em>.github.io， username一定要和github账号的用户名匹配。</p>
-<h3 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h3><p>为了能够把代码部署到github 还需要安装插件。</p>
+<hr>
+<h1 id="Github-page"><a href="#Github-page" class="headerlink" title="Github page"></a><font color="LightSkyBlue" size="7"><strong>Github page</strong></font></h1><h3 id="create-a-new-repository"><a href="#create-a-new-repository" class="headerlink" title="create a new repository"></a><strong>create a new repository</strong></h3><p>创建一个新的repo，名为<em>username</em>.github.io， username一定要和github账号的用户名匹配。</p>
+<hr>
+<h3 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a><strong>deploy</strong></h3><p>为了能够把代码部署到github 还需要安装插件。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>修改_config.yml,如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy：</span><br><span class="line">	type: git</span><br><span class="line">	repo: github: git@github.com:cduyzh/cduyzh.github.io.git</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure>
 <p>冒号之后一定有空格，不然generate时会报错。之后使用命令完成部署</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  #remove public folder</span><br><span class="line">hexo g      # generate</span><br><span class="line">hexo d      # deploy</span><br></pre></td></tr></table></figure>
-<p>第一次会要求输入github账号及密码，输入即可。在之后的使用中，先在本地编辑，端口看效果，然后部署到github，其他人就可以访问https://<em>username</em>.github.io看到你的博客。</p>
-<h1 id="Encrypt"><a href="#Encrypt" class="headerlink" title="Encrypt"></a>Encrypt</h1><p>当然啦，并不是每篇文章都想让别人看到，这个时候就需要对博文进行加密.有一个很方便的插件是hexo-blog-encrypt.简单的使用方法如下，详情请见reference 3。</p>
+<p align="justify"> 第一次会要求输入github账号及密码，输入即可。在之后的使用中，先在本地编辑，端口看效果，然后部署到github，其他人就可以访问https://<em>username</em>.github.io看到你的博客。</p>
+
+<hr>
+<h1 id="Encrypt"><a href="#Encrypt" class="headerlink" title="Encrypt"></a><font color="LightSkyBlue"><strong>Encrypt</strong></font></h1><p align="justify"> 当然啦，并不是每篇文章都想让别人看到，这个时候就需要对博文进行加密.有一个很方便的插件是hexo-blog-encrypt.简单的使用方法如下，详情请见reference 3。</p>
+
 <p><img src="https://raw.githubusercontent.com/JIANGWQ2017/MarkdownImg/master/encrypt-blog.png" alt="blog-encrypt"></p>
-<p>但是在笔者测试过程中，出现某些theme并不能很好的支持插件，出现从首页跳转到post，js不加载，但是刷新一遍js便可以加载的情况。由于笔者不是做前端的，折腾两天没有找出问题出在哪里，于是曲线救国…换一个theme！</p>
-<h1 id="Add-backgroud-music-2018-9-11-update"><a href="#Add-backgroud-music-2018-9-11-update" class="headerlink" title="Add backgroud music / 2018.9.11 update"></a>Add backgroud music / 2018.9.11 update</h1><p>网上提到hexo框架背景音乐的添加，实现方法大多为两种，一种是获取主流音乐平台的外链，然后插入HTML，ejs等类型文件中；另一种是利用hexo-tag-aplayer 插件在markdown文件中添加相应代码,这两种方法各有优缺点： </p>
+<p align="justify"> 但是在笔者测试过程中，出现某些theme并不能很好的支持插件，出现从首页跳转到post，js不加载，但是刷新一遍js便可以加载的情况。由于笔者不是做前端的，折腾两天没有找出问题出在哪里，于是曲线救国…换一个theme！</p>
+
+<hr>
+<h1 id="Backgroud-music"><a href="#Backgroud-music" class="headerlink" title="Backgroud music "></a><font color="LightSkyBlue">Backgroud music </font></h1><h2 id="2018-9-11-update"><a href="#2018-9-11-update" class="headerlink" title="2018.9.11 update"></a><strong>2018.9.11 update</strong></h2><p align="justify"> 网上提到hexo框架背景音乐的添加，实现方法大多为两种，一种是获取主流音乐平台的外链，然后插入HTML，ejs等类型文件中；另一种是利用hexo-tag-aplayer 插件在markdown文件中添加相应代码,这两种方法各有优缺点： </p>
+
 <p>第一种：</p>
 <p>PROs： 直观，方便，插在页面上任何的地方都可以。</p>
 <p>CONs: 需要一点前端，特别是html的知识，并且不方便在单篇文章添加BGM，只适合于为整个网站添加； 对于海外版权受限区域，主流平台通常不支持生成外链。</p>
 <p>第二种：</p>
 <p>PROs: 因为是在markdown文件中添加的，所以可以为单个文章添加BGM，也方便为不同post添加不同BGM。</p>
 <p>CONs: 需要安装额外插件， 可能造成一些程序上的冲突，或是不兼容问题； 添加起来没有第一种方便。</p>
-<p>鉴于笔者位于海外， 网易云对海外用户特别不友好，之前成为会员可以解锁大部分歌曲的版权，现在是有钱都不行了，绝大部分的歌曲只能在线听。客户端是不支持生成外链的，但网页版又有版权限制， 故在此劝海外的同学们放弃第一种插入bgm的方式吧。在此详细讲解第二种方式，第一种实现方式参考reference 4。</p>
+<p align="justify"> 鉴于笔者位于海外， 网易云对海外用户特别不友好，之前成为会员可以解锁大部分歌曲的版权，现在是有钱都不行了，绝大部分的歌曲只能在线听。客户端是不支持生成外链的，但网页版又有版权限制， 故在此劝海外的同学们放弃第一种插入bgm的方式吧。在此详细讲解第二种方式，第一种实现方式参考reference 4。</p>
+
 <p>该插件的使用方法在作者的<a href="https://github.com/MoePlayer/hexo-tag-aplayer" target="_blank" rel="noopener">github</a>上有详细的说明，这里只说明一下要点。</p>
 <p><img src="https://raw.githubusercontent.com/JIANGWQ2017/MarkdownImg/master/plugin_usage.png" alt="plugin_usage"></p>
-<p>usage 下的命令是直接添加到markdown文件中的，成为文章的一部分，所以位置推荐放在文章开头， 遇到审美不同的看客，她/他也方便关掉BGM。  title,author 等一切参数最好都用” “包括，就是例子中给出的那样。作者没有给出除了歌词之外的几个optional参数怎么使用，当笔者在参考他人写的博客的时候就被误导了，他/她写的是  “autoplay=false”， 在hexo g 命令下报错，错误信息是not found (autoplay=false) 后来看了插件作者的源码之后发现作者是用正则表达式去提取parameter, 应该直接写”autoplay”代表自动播放，不写代表不自动播放，其他optional参数类似。 </p>
-<p>现在还有一个最重要的问题，怎么取的音频的url，方法当然是上传到共享空间，然后获得url，但是目前笔者没有找到一个合适的音频文件共享网站，但是在搜索过程中发现一个神奇的网站，<a href="http://music.liuzhijin.cn/" target="_blank" rel="noopener">音乐直链搜索</a>，很方便的提取到音乐链接，作者，名称。剩下的工作就是添加对应代码到markdown文件中的合适位置就好了。</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>[1] <a href="https://segmentfault.com/a/1190000008738089" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008738089</a></p>
+<p align="justify"> usage 下的命令是直接添加到markdown文件中的，成为文章的一部分，所以位置推荐放在文章开头， 遇到审美不同的看客，她/他也方便关掉BGM。  title,author 等一切参数最好都用” “包括，就是例子中给出的那样。作者没有给出除了歌词之外的几个optional参数怎么使用，当笔者在参考他人写的博客的时候就被误导了，他/她写的是  “autoplay=false”， 在hexo g 命令下报错，错误信息是not found (autoplay=false) 后来看了插件作者的源码之后发现作者是用正则表达式去提取parameter, 应该直接写”autoplay”代表自动播放，不写代表不自动播放，其他optional参数类似。</p> 
+
+<p align="justify"> 现在还有一个最重要的问题，怎么取的音频的url，方法当然是上传到共享空间，然后获得url，但是目前笔者没有找到一个合适的音频文件共享网站，但是在搜索过程中发现一个神奇的网站，<a href="http://music.liuzhijin.cn/" target="_blank" rel="noopener">音乐直链搜索</a>，很方便的提取到音乐链接，作者，名称。剩下的工作就是添加对应代码到markdown文件中的合适位置就好了。</p>
+
+<hr>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a><font color="LightSkyBlue"><strong>Reference</strong></font></h1><p>[1] <a href="https://segmentfault.com/a/1190000008738089" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008738089</a></p>
 <p>[2] <a href="https://jakting.com/archives/hexo-setup-guide.html" target="_blank" rel="noopener">https://jakting.com/archives/hexo-setup-guide.html</a></p>
 <p>[3] <a href="https://github.com/MikeCoder/hexo-blog-encrypt" target="_blank" rel="noopener">https://github.com/MikeCoder/hexo-blog-encrypt</a></p>
 <p>[4] <a href="https://www.jianshu.com/p/9a3fc2bdfac7" target="_blank" rel="noopener">https://www.jianshu.com/p/9a3fc2bdfac7</a></p>

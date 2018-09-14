@@ -134,12 +134,12 @@
         <!-- Post Main Content -->
         <div class="entry-content has_line_number">
           
-        <div id="aplayer-qfxmCdyB" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-jzJLjRfA" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-qfxmCdyB"),
+            element: document.getElementById("aplayer-jzJLjRfA"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -154,7 +154,9 @@
           window.aplayers || (window.aplayers = []);
           window.aplayers.push(ap);
         </script>
-<h1 id="Description"><a href="#Description" class="headerlink" title=" Description "></a><font color="#FF69B4" ,="" size="7"> <strong><em>Description</em></strong> </font></h1><p>This post serves as the record and a practice platform for  learning Markdown syntax. with diving deeper, some changes might be done to make this post looks better.</p>
+<h1 id="Description"><a href="#Description" class="headerlink" title=" Description "></a><font color="#FF69B4" ,="" size="7"> <strong><em>Description</em></strong> </font></h1><p align="justify">This post serves as the record and a practice platform for  learning Markdown syntax. with diving deeper, some changes might be done to make this post looks better.</p>
+
+
 <h1 id="syntax"><a href="#syntax" class="headerlink" title=" syntax "></a><font color="#FF69B4" ,="" size="7"> <strong><em>syntax</em></strong> </font></h1><h2 id="Table-Of-Contents"><a href="#Table-Of-Contents" class="headerlink" title="Table Of Contents"></a>Table Of Contents</h2><ul>
 <li><a href="#Italics">Italics</a>  </li>
 <li><a href="#bold">bold</a></li>
@@ -188,7 +190,8 @@
 </blockquote>
 <hr>
 <h3 id="bold-and-italics"><a href="#bold-and-italics" class="headerlink" title="bold and italics"></a><strong><em>bold and italics</em></strong></h3><p> &#160;&#160;&#160;&#160;<a href="#Table-Of-Contents">Toc</a> </p>
-<p>of course, words can be both italics and bold, no matter which order of the asterisks and underscores. even can make a header bold and italics e.g: </p>
+<p align="justify">of course, words can be both italics and bold, no matter which order of the asterisks and underscores. even can make a header bold and italics e.g:</p> 
+
 <pre><code>**_this is a test_**  
 </code></pre><blockquote>
 <p><strong><em>this is a test</em></strong></p>
@@ -205,7 +208,8 @@
 <blockquote>
 <p>this is the example for reference <a href="www.google.com">links(link to google search)</a><br>this is another example, same links to <a href="www.google.com">google search</a></p>
 </blockquote>
-<p>the advantage of using reference link rather than regular link is that when multiple place have the same link and a change need to be done. user can simply change the reference link rather than change several links in different place.</p>
+<p align="justify">the advantage of using reference link rather than regular link is that when multiple place have the same link and a change need to be done. user can simply change the reference link rather than change several links in different place.</p>
+
 <hr>
 <h3 id="block-quotes"><a href="#block-quotes" class="headerlink" title="block quotes"></a><strong><em>block quotes</em></strong></h3><p>&#160;&#160;&#160;&#160;<a href="#Table-Of-Contents">Toc</a> </p>
 <p>preface a link with “greater than” caret e.g:</p>
@@ -333,6 +337,25 @@
 <p># header, name<br>id = header-name </p>
 </blockquote>
 <p>so if we want to refer to a header, just place [self-defined name](#id) at where you want to connect.</p>
+<hr>
+<p>###<strong><em>alignment</em></strong></p>
+<p>Markdown does not care about format, it only values the content. so we may take advantage of HTML to realize alignment</p>
+<p>1: center<br><code>&lt;center&gt; content &lt;/center&gt;</code></p>
+<blockquote>
+<center> content </center>
+</blockquote>
+<p>2: left align<br><code>&lt;p align=&quot;left&quot;&gt; content &lt;/p&gt;</code></p>
+<blockquote>
+<p alian="left"> content</p>
+</blockquote>
+<p>3: right align<br><code>&lt;p align = &quot;right&quot;&gt; content &lt;/p&gt;</code>  </p>
+<blockquote>
+<p align="right"> content </p>  
+</blockquote>
+<p>4: justify align<br><code>&lt;p align = &quot;justify&quot;&gt; content &lt;/p&gt;</code>  </p>
+<blockquote>
+<p align="justify"> vary vary vary vary vary vary vary vary vary vary vary vary vary vary vary long content </p>
+</blockquote>
 <hr>
 <h3 id="extras"><a href="#extras" class="headerlink" title="extras"></a><strong><em>extras</em></strong></h3><p>&#160;&#160;&#160;&#160;<a href="#Table-Of-Contents">Toc</a> </p>
 <p>1: task lists:</p>
